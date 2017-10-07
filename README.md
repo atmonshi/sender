@@ -1,4 +1,6 @@
 # Sender Provider manager
+[![Build Status](https://travis-ci.org/wa7eedem/sender.svg?branch=master)](https://travis-ci.org/wa7eedem/sender)
+[![Code Climate](https://codeclimate.com/github/wa7eedem/sender/badges/gpa.svg)](https://codeclimate.com/github/wa7eedem/sender)
 
 an sms gate to send messages form a provider .
 
@@ -39,6 +41,8 @@ api::getBalance('STag')
 ```
 api::getSenderNames('STag')
 ```
+
+##_____________________________________
 
 ## mobily.ws available functions
 
