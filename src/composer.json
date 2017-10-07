@@ -1,0 +1,14 @@
+{
+    "name": "wa7eedem/smsgate",
+    "description": "an sms gate to send messages form a provider like newtags.com.sa.com.sa and mobily.ws",
+    "type": "laravel, php, sms, sender",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Ashraf Mosnhi",
+            "email": "wh7r.com@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
