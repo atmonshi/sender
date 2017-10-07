@@ -5,12 +5,13 @@
 an sms gate to send messages form a provider .
 
 ## supported providers :
-* [newtags](http://www.newtags.com.sa.com/) 
+* [newtags](http://www.newtags.com.sa.com/)
 * [mobily.ws](https://mobily.ws/)
+
 
 ## Getting Started
 
-this is a laravel package , to install laravel see the [laravel Docs](https://laravel.com/docs/master/). 
+this is a laravel package , to install laravel see the [laravel Docs](https://laravel.com/docs/master/).
 
 
 ## Installing
