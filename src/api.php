@@ -13,10 +13,19 @@ class api
 {
     public static function getBalance($provider = null)
     {
-        $provider = (is_null($provider)) ? config('sender.provider') : $provider;
+        $provider = (is_null($provider)) ? '\wa7eedem\smsGate\\'.config('sender.provider') : '\wa7eedem\smsGate\\'.$provider;
         $call     = new $provider;
         $balance  = $call->getBalance();
 
-        return "hi api " . $balance;
+        return $balance;
+    }
+
+    public static function getSenderNames($provider = null)
+    {
+        $provider = (is_null($provider)) ? '\wa7eedem\smsGate\\'.config('sender.provider') : '\wa7eedem\smsGate\\'.$provider;
+        $call     = new $provider;
+        $senderName  = $call->getSenderNames();
+
+        return $senderName;
     }
 }

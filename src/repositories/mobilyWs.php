@@ -17,6 +17,11 @@ class mobilyWs
         $password = config('sender.mobileWs.password');
         $balcanc  = balanceSMS($mobile, $password, $resultType);
 
-        return "your balance is " . $balcanc;
+        return $balcanc;
+    }
+
+    public function getSenderNames()
+    {
+        return "Not available in mobilyWs";
     }
 }

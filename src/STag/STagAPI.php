@@ -105,6 +105,7 @@ class STagAPI
             'user' => $this->config['username'],
             'pass' => $this->config['password'],
         ];
+
         $vars     = array_merge($userInfo, $serviceVars);
         if (!isset($userInfo['user']) || !isset($userInfo['pass'])) {
             throw new \Exception('There is Some Missing Parameters for this Service, Please review the documentation ');

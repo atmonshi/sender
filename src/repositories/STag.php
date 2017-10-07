@@ -13,6 +13,7 @@ use wa7eedem\smsGate\STag\STagAPI;
 class STag
 {
     protected $api;
+
     public function __construct()
     {
         $this->api = new stagAPI;
@@ -20,8 +21,15 @@ class STag
 
     public function getBalance($serviceVars = [])
     {
-        $service     = $this->api->callService('checkBalance', $serviceVars);
+        $service = $this->api->callService('checkBalance', $serviceVars);
 
-        return "your balance is " . $service->balance;
+        return $service->balance;
+    }
+
+    public function getSenderNames()
+    {
+        $service     = $this->api->callService('senderNames', ['getAll' => 1]);
+
+        return $service->senderNames;
     }
 }

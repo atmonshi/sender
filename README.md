@@ -11,7 +11,7 @@ an sms gate to send messages form a provider .
 this is a laravel package , to install laravel see the [laravel Docs](https://laravel.com/docs/master/). 
 
 
-### Installing
+## Installing
 
 after installing laravel , simply run :
 
@@ -24,3 +24,31 @@ to publish the config file :
 ```
 php artisan vendor:publish --tag=config
 ```
+
+
+## NewTags available functions
+
+### get Balance :
+
+```
+api::getBalance('STag')
+```
+
+### get Senders Names :
+
+```
+api::getSenderNames('STag')
+```
+
+## mobily.ws available functions
+
+### get Balance :
+
+```
+api::getBalance('mobilyWs')
+```
+
+
+
+
+.
