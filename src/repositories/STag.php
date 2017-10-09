@@ -28,7 +28,7 @@ class STag
 
     public function getSenderNames()
     {
-        $service     = $this->api->callService('senderNames', ['getAll' => 1]);
+        $service = $this->api->callService('senderNames', ['getAll' => 1]);
 
         return $service->senderNames;
     }

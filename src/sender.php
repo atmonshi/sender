@@ -3,13 +3,13 @@
 return [
     'provider' => \wa7eedem\smsGate\STag::class,
 
-    'stags'    => [
+    'stag'    => [
         'username'   => '',
         'password'   => '',
         'apiVersion' => 'v1.0',
         'senderName' => '',
     ],
-    'mobileWs' => [
+    'mobilyWs' => [
         'username' => '',
         'password' => '',
     ],

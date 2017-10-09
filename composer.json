@@ -2,7 +2,6 @@
     "name": "wa7eedem/smsgate",
     "description": "an sms gate to send messages form a provider like newtags.com.sa.com.sa and mobily.ws",
     "keywords": ["laravel", "sender", "sms", "provider"],
-    "type": "project",
     "license": "mit",
     "authors": [
         {
@@ -10,6 +9,7 @@
             "email": "wh7r.com@gmail.com"
         }
     ],
+    "type": "project",
     "require": {
         "php": ">=5.4"
     },
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "wa7eedem\\smsgate\\": "src/"
+            "wa7eedem\\smsGate\\": "src/"
         }
     }
 }
