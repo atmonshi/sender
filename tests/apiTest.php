@@ -21,14 +21,4 @@ class apiTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(is_object($var));
         unset($var);
     }
-
-    /**
-     * check if return is true and no errors in syntax
-     */
-    public function testMethod1()
-    {
-        $var = new wa7eedem\smsGate\api;
-        $this->assertTrue($var->getBalance("STag") == '#FFEBEE');
-        unset($var);
-    }
 }
