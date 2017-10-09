@@ -19,7 +19,7 @@ this is a laravel package , to install laravel see the [laravel Docs](https://la
 after installing laravel , simply run :
 
 ```
-composer require wa7eedem/sender
+composer require wa7eedem/smsgate
 ```
 
 to publish the config file :
