@@ -1,6 +1,10 @@
 # Sender Provider manager
 [![Build Status](https://travis-ci.org/wa7eedem/sender.svg?branch=master)](https://travis-ci.org/wa7eedem/sender)
 [![Code Climate](https://codeclimate.com/github/wa7eedem/sender/badges/gpa.svg)](https://codeclimate.com/github/wa7eedem/sender)
+[![Latest Stable Version](https://poser.pugx.org/wa7eedem/smsgate/v/stable?format=flat)](https://packagist.org/packages/wa7eedem/smsgate)
+[![Total Downloads](https://poser.pugx.org/wa7eedem/smsgate/downloads?format=flat)](https://packagist.org/packages/wa7eedem/smsgate)
+[![License](https://poser.pugx.org/wa7eedem/smsgate/license?format=flat)](https://packagist.org/packages/wa7eedem/smsgate)
+
 
 an sms gate to send messages form a provider .
 
