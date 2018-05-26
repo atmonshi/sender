@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'provider' => \wa7eedem\smsGate\STag::class,
+    'provider' => 'STag',
 
     'stag'    => [
         'username'   => '',

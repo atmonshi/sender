@@ -27,4 +27,17 @@ class api
 
         return $senderName;
     }
+
+    public static function send($provider = null, $to, $msg)
+    {
+        $provider = (is_null($provider)) ? '\wa7eedem\smsGate\\' . config('sender.provider') : '\wa7eedem\smsGate\\' . $provider;
+        $call     = new $provider;
+        $sendSms  = $call->send($to, $msg);
+
+        if ($sendSms->status == 1) {
+            return $sendSms;
+        }
+
+        throw new \Exception('sending failed =>> ' . json_encode($sendSms));
+    }
 }

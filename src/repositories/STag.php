@@ -32,4 +32,17 @@ class STag
 
         return $service->senderNames;
     }
+
+    public function send($to, $msg)
+    {
+        $serviceVars               = [];
+        $serviceVars['appName']    = config('app.name');
+        $serviceVars['host']       = request()->getHost();
+        $serviceVars['mobiles']    = $to;
+        $serviceVars['text']       = $msg;
+
+        $service = $this->api->callService('sendSms', $serviceVars);
+
+        return $service;
+    }
 }

@@ -40,7 +40,7 @@ class STagAPI
 
     public function __construct()
     {
-        $this->config = config('sender.stags');
+        $this->config = config('sender.stag');
         $this->url    = $this->url . $this->config['apiVersion'] . '/';
         $this->curl   = new CURL();
     }
@@ -106,7 +106,7 @@ class STagAPI
             'pass' => $this->config['password'],
         ];
 
-        $vars     = array_merge($userInfo, $serviceVars);
+        $vars = array_merge($userInfo, $serviceVars);
         if (!isset($userInfo['user']) || !isset($userInfo['pass'])) {
             throw new \Exception('There is Some Missing Parameters for this Service, Please review the documentation ');
         }
@@ -128,25 +128,25 @@ class STagAPI
      */
     private function sendSms($serviceVars = [])
     {
-        if (!isset($serviceVars['appName']) || !isset($serviceVars['host']) || !isset($serviceVars['senderName']) || !isset($serviceVars['mobiles']) || !isset($serviceVars['text'])) {
+        if (!isset($serviceVars['appName']) || !isset($serviceVars['host']) || !isset($serviceVars['mobiles']) || !isset($serviceVars['text'])) {
             throw new \Exception('There is Some Missing Parameters for this Service, Please review the documentation ');
         }
         if (!preg_match('/^[a-z0-9][a-z0-9\-]+[a-z0-9](\.[a-z]{2,5})+$/i', $serviceVars['host'])) {
             throw new \Exception('Not a valid host');
         }
         $userInfo = [
-            'user' => $this->config['username'],
-            'pass' => $this->config['password'],
+            'user'       => $this->config['username'],
+            'pass'       => $this->config['password'],
+            'senderName' => $this->config['senderName'],
         ];
-        if (!isset($userInfo['user']) || !isset($userInfo['pass'])) {
+
+        if (!isset($userInfo['user']) || !isset($userInfo['pass']) || !isset($userInfo['senderName'])) {
             throw new \Exception('There is Some Missing Parameters for this Service, Please review the documentation ');
         }
         $vars = array_merge($userInfo, $serviceVars);
 
         $response = $this->curl->post($this->url . $this->services['sendSms'], $vars);
-
-        //return $response;
-
+        
         if (isset($response->status) && $response->status === 1) {
             return $response;
         } else {
