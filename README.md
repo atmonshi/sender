@@ -1,6 +1,6 @@
 # Sender Provider manager
 [![Build Status](https://travis-ci.org/atmonshi/sender.svg?branch=master)](https://travis-ci.org/atmonshi/sender)
-[![Code Climate](https://codeclimate.com/github/atmonshi/sender/badges/gpa.svg)](https://codeclimate.com/github/atmonshi/sender)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4a8416b74f8607cd631e/maintainability)](https://codeclimate.com/github/atmonshi/sender/maintainability)
 [![Latest Stable Version](https://poser.pugx.org/atmonshi/sender/v/stable?format=flat)](https://packagist.org/packages/atmonshi/sender)
 [![Total Downloads](https://poser.pugx.org/atmonshi/sender/downloads?format=flat)](https://packagist.org/packages/atmonshi/sender)
 [![License](https://poser.pugx.org/atmonshi/sender/license?format=flat)](https://packagist.org/packages/atmonshi/sender)

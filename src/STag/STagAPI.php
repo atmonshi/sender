@@ -2,10 +2,8 @@
 
 namespace atmonshi\sender\STag;
 
-use atmonshi\sender\STag\CURL;
-
 /**
- * Class STag_API for managing the STag SMS API Calls
+ * Class STag_API for managing the STag SMS API Calls.
  *
  * @version     1.0
  */
@@ -14,48 +12,46 @@ class STagAPI
     /**
      * @var string Base Url fo STag API
      */
-    private $url = "https://newtags.com.sa/sms/api/";
-
+    private $url = 'https://newtags.com.sa/sms/api/';
     /**
      * @var array User Config
      */
     private $config;
-
     /**
      * @var CURL CURL library Object
      */
     private $curl;
-
     /**
      * @var array Services names with callable service name for API
      */
-    private $services = [
-        'checkBalance'    => 'checkBalance',
-        'senderNames'     => 'getSenderNames',
-        'sendSms'         => 'sendSMS',
-        'groupsMangment'  => 'groupsMangment',
-        'mobilesMangment' => 'mobilesMangment',
+    private $services
+        = [
+            'checkBalance'    => 'checkBalance',
+            'senderNames'     => 'getSenderNames',
+            'sendSms'         => 'sendSMS',
+            'groupsMangment'  => 'groupsMangment',
+            'mobilesMangment' => 'mobilesMangment',
 
-    ];
+        ];
 
     public function __construct()
     {
         $this->config = config('sender.stag');
-        $this->url    = $this->url . $this->config['apiVersion'] . '/';
-        $this->curl   = new CURL();
+        $this->url = $this->url.$this->config['apiVersion'].'/';
+        $this->curl = new CURL();
     }
 
     /**
-     * Call an API Service
+     * Call an API Service.
      *
      * @param string $serviceName API Service Name
-     * @param array $serviceVars Service Parameters
+     * @param array  $serviceVars Service Parameters
      *
      * @return object
      */
     public function callService($serviceName, array $serviceVars = [])
     {
-        if (isset($this->services[ $serviceName ])) {
+        if (isset($this->services[$serviceName])) {
             return $this->$serviceName($serviceVars);
         } else {
             return 'Undefined Service Name !';
@@ -63,7 +59,7 @@ class STagAPI
     }
 
     /**
-     * Check User Balance Service
+     * Check User Balance Service.
      *
      * @param array $serviceVars Service Parameters
      *
@@ -80,7 +76,7 @@ class STagAPI
         }
         $vars = array_merge($userInfo, $serviceVars);
 
-        $response = $this->curl->post($this->url . $this->services['checkBalance'], $vars);
+        $response = $this->curl->post($this->url.$this->services['checkBalance'], $vars);
         if (isset($response->status) && $response->status === 1) {
             return $response;
         } else {
@@ -89,7 +85,7 @@ class STagAPI
     }
 
     /**
-     * Get Sender Names Service
+     * Get Sender Names Service.
      *
      * @param array $serviceVars Service Parameters
      *
@@ -110,7 +106,7 @@ class STagAPI
         if (!isset($userInfo['user']) || !isset($userInfo['pass'])) {
             throw new \Exception('There is Some Missing Parameters for this Service, Please review the documentation ');
         }
-        $response = $this->curl->post($this->url . $this->services['senderNames'], $vars);
+        $response = $this->curl->post($this->url.$this->services['senderNames'], $vars);
 
         if (isset($response->status) && $response->status === 1) {
             return $response;
@@ -120,7 +116,7 @@ class STagAPI
     }
 
     /**
-     * send sms Service
+     * send sms Service.
      *
      * @param array $serviceVars Service Parameters
      *
@@ -145,8 +141,8 @@ class STagAPI
         }
         $vars = array_merge($userInfo, $serviceVars);
 
-        $response = $this->curl->post($this->url . $this->services['sendSms'], $vars);
-        
+        $response = $this->curl->post($this->url.$this->services['sendSms'], $vars);
+
         if (isset($response->status) && $response->status === 1) {
             return $response;
         } else {
@@ -155,7 +151,7 @@ class STagAPI
     }
 
     /**
-     * Groups Managment Service
+     * Groups Managment Service.
      *
      * @param array $serviceVars Service Parameters
      *
@@ -173,7 +169,7 @@ class STagAPI
 
         if ($serviceVars['action'] == "create") {
             $serviceVars['name'] = trim($serviceVars['name']);
-            if ((!isset($serviceVars['name']) || !isset($serviceVars['type'])) || (isset($serviceVars['type']) && ($serviceVars['type'] != "1" && $serviceVars['type'] != "2"))) {
+            if (( !isset($serviceVars['name']) || !isset($serviceVars['type']) ) || ( isset($serviceVars['type']) && ( $serviceVars['type'] != "1" && $serviceVars['type'] != "2" ) )) {
                 throw new \Exception('There is Some Missing Parameters for create action, Please review the documentation ');
             }
         }
@@ -198,7 +194,7 @@ class STagAPI
         if (!isset($userInfo['user']) || !isset($userInfo['pass'])) {
             throw new \Exception('There is Some Missing Parameters for this Service, Please review the documentation ');
         }
-        $response = $this->curl->post($this->url . $this->services['groupsMangment'], $vars);
+        $response = $this->curl->post($this->url.$this->services['groupsMangment'], $vars);
         //var_dump($response);
         if (isset($response->status) && $response->status === 1) {
             return $response;
@@ -208,7 +204,7 @@ class STagAPI
     }
 
     /**
-     * Groups Mobiles Managment Service
+     * Groups Mobiles Managment Service.
      *
      * @param array $serviceVars Service Parameters
      *
@@ -225,7 +221,7 @@ class STagAPI
         }
 
         if ($serviceVars['action'] == "create") {
-            if ((!isset($serviceVars['group_id']) || !isset($serviceVars['number']))) {
+            if (( !isset($serviceVars['group_id']) || !isset($serviceVars['number']) )) {
                 throw new \Exception('There is Some Missing Parameters for create action, Please review the documentation ');
             }
         }
@@ -256,7 +252,7 @@ class STagAPI
         if (!isset($userInfo['user']) || !isset($userInfo['pass'])) {
             throw new \Exception('There is Some Missing Parameters for this Service, Please review the documentation ');
         }
-        $response = $this->curl->post($this->url . $this->services['mobilesMangment'], $vars);
+        $response = $this->curl->post($this->url.$this->services['mobilesMangment'], $vars);
         if (isset($response->status) && $response->status === 1) {
             return $response;
         } else {
@@ -264,5 +260,4 @@ class STagAPI
         }
     }
 }
-
 ?>

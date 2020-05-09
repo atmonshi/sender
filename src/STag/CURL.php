@@ -6,9 +6,9 @@ class CURL
 {
     const VERSION = '2.1.0';
 
-    private $cookies = array();
-    private $headers = array();
-    private $options = array();
+    private $cookies = [];
+    private $headers = [];
+    private $options = [];
 
     private $multi_parent = false;
     private $multi_child = false;
@@ -52,13 +52,13 @@ class CURL
         $this->setOpt(CURLOPT_RETURNTRANSFER, true);
     }
 
-    public function get($url_mixed, $data = array())
+    public function get($url_mixed, $data = [])
     {
         if (is_array($url_mixed)) {
             $curl_multi = curl_multi_init();
             $this->multi_parent = true;
 
-            $this->curls = array();
+            $this->curls = [];
 
             foreach ($url_mixed as $url) {
                 $curl = new Curl();
@@ -113,7 +113,7 @@ class CURL
         }
     }
 
-    public function post($url, $data = array())
+    public function post($url, $data = [])
     {
         if (is_array($data) && empty($data)) {
             $this->unsetHeader('Content-Length');
@@ -128,7 +128,7 @@ class CURL
         return $this->exec();
     }
 
-    public function put($url, $data = array())
+    public function put($url, $data = [])
     {
         $this->base_url = $url;
         $this->url = $url;
@@ -142,7 +142,7 @@ class CURL
         return $this->exec();
     }
 
-    public function patch($url, $data = array())
+    public function patch($url, $data = [])
     {
         $this->base_url = $url;
         $this->url = $url;
@@ -153,7 +153,7 @@ class CURL
         return $this->exec();
     }
 
-    public function delete($url, $data = array())
+    public function delete($url, $data = [])
     {
         $this->base_url = $url;
         $this->url = $url;
@@ -163,7 +163,7 @@ class CURL
         return $this->exec();
     }
 
-    public function head($url, $data = array())
+    public function head($url, $data = [])
     {
         $this->base_url = $url;
         $this->url = $this->buildURL($url, $data);
@@ -173,7 +173,7 @@ class CURL
         return $this->exec();
     }
 
-    public function options($url, $data = array())
+    public function options($url, $data = [])
     {
         $this->base_url = $url;
         $this->url = $url;
@@ -302,7 +302,7 @@ class CURL
         $this->complete_function = $callback;
     }
 
-    private function buildURL($url, $data = array())
+    private function buildURL($url, $data = [])
     {
         return $url . (empty($data) ? '' : '?' . http_build_query($data));
     }
@@ -492,7 +492,7 @@ class CURL
 
     public static function http_build_multi_query($data, $key = null)
     {
-        $query = array();
+        $query = [];
 
         if (empty($data)) {
             return $key . '=';
@@ -516,7 +516,7 @@ class CURL
 
 class CaseInsensitiveArray implements \ArrayAccess, \Countable, \Iterator
 {
-    private $container = array();
+    private $container = [];
 
     public function offsetSet($offset, $value)
     {
