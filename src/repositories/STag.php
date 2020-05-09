@@ -1,6 +1,6 @@
 <?php
 
-namespace atmonshi\sender;
+namespace atmonshi\sender\repositories;
 
 use atmonshi\sender\STag\STagAPI;
 

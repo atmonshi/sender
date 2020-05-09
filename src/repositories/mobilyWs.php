@@ -1,6 +1,6 @@
 <?php
 
-namespace sender\sender;
+namespace atmonshi\sender\repositories;
 
 class mobilyWs
 {
