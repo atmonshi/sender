@@ -1,5 +1,5 @@
 {
-    "name": "wa7eedem/smsgate",
+    "name": "atmonshi/sender",
     "description": "an sms gate to send messages form a provider like newtags.com.sa.com.sa and mobily.ws",
     "keywords": ["laravel", "sender", "sms", "provider"],
     "license": "MIT",
