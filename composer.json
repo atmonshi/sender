@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "wa7eedem\\smsGate\\": "src/"
+            "atmonshi\\sender\\": "src/"
         }
     }
 }

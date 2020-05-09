@@ -1,9 +1,9 @@
 # Sender Provider manager
-[![Build Status](https://travis-ci.org/wa7eedem/sender.svg?branch=master)](https://travis-ci.org/wa7eedem/sender)
-[![Code Climate](https://codeclimate.com/github/wa7eedem/sender/badges/gpa.svg)](https://codeclimate.com/github/wa7eedem/sender)
-[![Latest Stable Version](https://poser.pugx.org/wa7eedem/smsgate/v/stable?format=flat)](https://packagist.org/packages/wa7eedem/smsgate)
-[![Total Downloads](https://poser.pugx.org/wa7eedem/smsgate/downloads?format=flat)](https://packagist.org/packages/wa7eedem/smsgate)
-[![License](https://poser.pugx.org/wa7eedem/smsgate/license?format=flat)](https://packagist.org/packages/wa7eedem/smsgate)
+[![Build Status](https://travis-ci.org/atmonshi/sender.svg?branch=master)](https://travis-ci.org/atmonshi/sender)
+[![Code Climate](https://codeclimate.com/github/atmonshi/sender/badges/gpa.svg)](https://codeclimate.com/github/atmonshi/sender)
+[![Latest Stable Version](https://poser.pugx.org/atmonshi/sender/v/stable?format=flat)](https://packagist.org/packages/atmonshi/sender)
+[![Total Downloads](https://poser.pugx.org/atmonshi/sender/downloads?format=flat)](https://packagist.org/packages/atmonshi/sender)
+[![License](https://poser.pugx.org/atmonshi/sender/license?format=flat)](https://packagist.org/packages/atmonshi/sender)
 
 
 an sms gate to send messages form a provider .
@@ -23,7 +23,7 @@ this is a laravel package , to install laravel see the [laravel Docs](https://la
 after installing laravel , simply run :
 
 ```
-composer require wa7eedem/smsgate
+composer require atmonshi/sender
 ```
 
 to publish the config file :

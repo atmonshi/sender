@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: atmonshi
- * Date: 10/7/17
- * Time: 9:46 AM
- */
 
-namespace wa7eedem\smsGate;
+namespace atmonshi\sender;
 
-use wa7eedem\smsGate\STag\STagAPI;
+use atmonshi\sender\STag\STagAPI;
 
 class STag
 {

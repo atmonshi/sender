@@ -1,8 +1,8 @@
 <?php
 
-namespace wa7eedem\smsGate\STag;
+namespace atmonshi\sender\STag;
 
-use wa7eedem\smsGate\STag\CURL;
+use atmonshi\sender\STag\CURL;
 
 /**
  * Class STag_API for managing the STag SMS API Calls

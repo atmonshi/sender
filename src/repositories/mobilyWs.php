@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: atmonshi
- * Date: 10/7/17
- * Time: 9:46 AM
- */
 
-namespace wa7eedem\smsGate;
+namespace sender\sender;
 
 class mobilyWs
 {

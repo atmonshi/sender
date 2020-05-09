@@ -1,10 +1,10 @@
 <?php
 
-namespace wa7eedem\smsGate;
+namespace atmonshi\sender;
 
 use Illuminate\Support\ServiceProvider;
 
-class SmsGateServiceProvider extends ServiceProvider
+class SenderServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -27,6 +27,6 @@ class SmsGateServiceProvider extends ServiceProvider
             __DIR__.'/sender.php' => config_path('sender.php'),
         ]);
 
-        $this->app->make('wa7eedem\smsGate\api');
+        $this->app->make('atmonshi\sender\api');
     }
 }

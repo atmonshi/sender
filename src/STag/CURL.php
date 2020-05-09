@@ -1,5 +1,6 @@
 <?php
-namespace wa7eedem\smsGate\STag;
+
+namespace atmonshi\sender\STag;
 
 class CURL
 {

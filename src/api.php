@@ -1,18 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: atmonshi
- * Date: 10/7/17
- * Time: 9:46 AM
- */
 
-namespace wa7eedem\smsGate;
+namespace atmonshi\sender;
 
 class api
 {
     public static function getBalance($provider = null)
     {
-        $provider = (is_null($provider)) ? '\wa7eedem\smsGate\\' . config('sender.provider') : '\wa7eedem\smsGate\\' . $provider;
+        $provider = (is_null($provider)) ? '\atmonshi\sender\\' . config('sender.provider') : '\atmonshi\sender\\' . $provider;
         $call     = new $provider;
         $balance  = $call->getBalance();
 
@@ -21,7 +15,7 @@ class api
 
     public static function getSenderNames($provider = null)
     {
-        $provider   = (is_null($provider)) ? '\wa7eedem\smsGate\\' . config('sender.provider') : '\wa7eedem\smsGate\\' . $provider;
+        $provider   = (is_null($provider)) ? '\atmonshi\sender\\' . config('sender.provider') : '\atmonshi\sender\\' . $provider;
         $call       = new $provider;
         $senderName = $call->getSenderNames();
 
@@ -30,7 +24,7 @@ class api
 
     public static function send($provider = null, $to, $msg)
     {
-        $provider = (is_null($provider)) ? '\wa7eedem\smsGate\\' . config('sender.provider') : '\wa7eedem\smsGate\\' . $provider;
+        $provider = (is_null($provider)) ? '\atmonshi\sender\\' . config('sender.provider') : '\atmonshi\sender\\' . $provider;
         $call     = new $provider;
         $sendSms  = $call->send($to, $msg);
 
